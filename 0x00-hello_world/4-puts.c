@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*
+/**
  *Function that prints a string as output
  *Returns 0
 */

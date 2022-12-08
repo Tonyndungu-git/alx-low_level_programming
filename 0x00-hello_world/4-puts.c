@@ -1,10 +1,11 @@
 #include <stdio.h>
-/*Function that prints a string as output*/
+/*
+ *Function that prints a string as output
+ *Returns 0
+*/
 
 int main(void)
 {
-
-puts("\"Programming is like building a multilingual puzzle\n");
+puts("\"Programming is like building a multilingual puzzle");
 return (0);
-
 }

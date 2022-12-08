@@ -1,4 +1,5 @@
 #include <stdio.h>
+/*Function that prints a string as output*/
 
 int main(void)
 {

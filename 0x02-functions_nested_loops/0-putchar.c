@@ -1,25 +1,21 @@
-#include <unistd.h>
-#define MAXSTRING 80
 #include "main.h"
+
 /**
- * main - check the code
- * Description : Its prints a string using _putchar
- * Return: Always 0.
+ * main - program that prints _putchar using .
+ *
+ * Return: int
  */
 
 int main(void)
 {
-	char message[] = "_putchar";
+	int n = 0;
+	char str_hbt[] = "_putchar";
 
-	for (int count = 0; count < MAXSTRING; count++)
+	while (n < 9)
 	{
-		if (message[count] == '\0')
-		{
-			_putchar('\n');
-			break;
-		}
-		else
-			_putchar(message[count]);
+		_putchar(str_hbt[n]);
+		n += 1;
 	}
+	_putchar('\n');
 	return (0);
 }

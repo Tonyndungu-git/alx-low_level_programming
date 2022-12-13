@@ -1,8 +1,7 @@
 #include "main.h"
 
-
 /**
- * print_alphabet_x10- function that prints the alphabet, lowercase 10 times.y
+ * print_alphabet_x10- function that prints the alphabet, lowercase ten times.
  * You can only use _putchar twice in your code
  * Return: nothing.
  */
@@ -21,6 +20,7 @@ void print_alphabet_x10(void)
 		c = 'a';
 
 		while (c <= 'z')
+
 		{
 			_putchar(c);
 			c++;
@@ -34,11 +34,4 @@ void print_alphabet_x10(void)
 	}
 
 
-}
-
-
-int main(void)
-{
-    print_alphabet_x10();
-    return (0);
 }

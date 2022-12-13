@@ -1,8 +1,9 @@
 #include "main.c"
+
 /**
- * _islower - function that prints detects if a characte is lowercase
- * You can only use _putchar twice in your code
- * Return: 1 and 0
+ * _islower - function that checks for lowercase character.
+ * @c: The input character to check
+ * Return: int.
  */
 
 int _islower(int c)

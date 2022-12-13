@@ -9,9 +9,9 @@
 int main(void)
 {
 	int n = 0;
-	char str_hbt[] = "_putchar";
+	char str_hbt[8] = "_putchar";
 
-	while (n < 9)
+	while (n < 8)
 	{
 		_putchar(str_hbt[n]);
 		n += 1;

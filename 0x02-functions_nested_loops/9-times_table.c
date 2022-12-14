@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * timetable -  function that prints the multiplication table.
+ * time_table -  function that prints the multiplication table.
  * starting from 0 to 9
  * Return: nothing.
  */

@@ -6,7 +6,7 @@
  * Return: integer
  */
 
-int main(void)
+int  main(void)
 {
 	int i;
 
@@ -23,5 +23,5 @@ int main(void)
 
 	}
 	printf("\n");
-
+	return (0);
 }

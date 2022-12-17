@@ -1,30 +1,37 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
- * main -  fibonacci numbers.
- * Return: int
+ *main - add even fibonacci numbers
+ *Return: 0
  */
 
 int main(void)
 {
-	int n1 = 0;
-	int n2 = 1;
-	int n3;
-	int i;
-	int number;
 
-	number = 100;
-	printf("\n%d %d", n1, n2);
-	for (i = 2; i < number; ++i)
+	long n1 =1 ;
+	long n2 = 2;
+	long n3;
+	long n4;
+	int i;
+
+	for(i = 2 ; i < 50; i++)
 	{
 		n3 = n1 + n2;
-		if (n3 > 4000000)
+		if (n3 < 4000000)
+		{
+			if ( n3 % 2 == 0)
+			{
+				n4 += n3;
+			}
+
+		}
+		else
 			break;
-		printf(" %d", n3);
 		n1 = n2;
 		n2 = n3;
 	}
+	printf("%ld", n4);
 	printf("\n");
 	return (0);
+
 }

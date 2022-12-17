@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * print_number - function that prints an integer..
+ * @n: input value to check
+ * Return: nothing.
+ */
 void print_number(int n)
 {
 	unsigned int num, num2;
@@ -30,11 +35,14 @@ void print_number(int n)
 		_putchar(num + '0');
 }
 
-
+/**
+ * main -fibonacci numbers without using standard library or long.
+ *Return: 0
+ */
 int main(void)
 {
 
-	int n1 ='1' ;
+	int n1 = '1';
 	int n2 = '2';
 	int n3;
 	int i;
@@ -46,8 +54,7 @@ int main(void)
 	_putchar(44);
 	_putchar(20);
 
-	
-	for(i = 2 ; i < 50; i++)
+	for (i = 2 ; i < 50; i++)
 	{
 		n3 = n1 + n2;
 		if (i != 49)

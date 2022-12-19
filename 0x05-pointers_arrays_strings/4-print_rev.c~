@@ -1,0 +1,30 @@
+#include "main.h"
+#include <stdio.h>
+
+
+void print_rev(char *s)
+{
+
+	int i;
+	int n;
+
+      	i = n;
+
+	while (s[i] == s[n])
+	{
+		_putchar(s[i]);
+		i--;
+	}
+	_putchar('\n');
+}
+
+int main(void)
+{
+    char *str;
+    int len;
+
+    str = "My first strlen!";
+    len = _strlen(str);
+    printf("%d\n", len);
+    return (0);
+}

@@ -1,0 +1,25 @@
+#include "main.h"
+
+/**
+ * _strcat - joins two strings together.
+ * @dest: pointer to destination string.
+ * @src: Pointer to source string.
+ * Return: pointer of a char.
+ */
+char *_strcat(char *dest, char *src)
+{
+
+
+	char *rdest = dest;
+
+	while (*dest)
+	{
+		dest++;
+	}
+	while (*dest++ = *src++)
+	{
+		;
+	}
+
+	return (rdest);
+}

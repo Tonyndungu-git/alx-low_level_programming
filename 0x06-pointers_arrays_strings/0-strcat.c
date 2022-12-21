@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  * _strcat - joins two strings together.
  * @dest: pointer to destination string.
@@ -9,17 +10,17 @@
 char *_strcat(char *dest, char *src)
 {
 
+	unsigned int i = 0;
+	unsigned int j = 0;
 
-	char *rdest = dest;
-
-	while (*dest)
+	while (*(dest + i) != '\0')
+		i++;
+	while (*(src + j) != '\0')
 	{
-		dest++;
+		*(dest + i) = *(src + j);
+		i++;
+		j++;
 	}
-	while (*dest++ = *src++)
-	{
-		;
-	}
-
-	return (rdest);
+	return (dest);
 }
+

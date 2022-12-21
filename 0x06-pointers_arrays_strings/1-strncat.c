@@ -1,40 +1,34 @@
 #include "main.h"
-#include <stdio.h>
+
+/**
+ * _strncat - joins together two strings.
+ * @dest: pointer to destination.
+ * @src : Pointer to source.
+ * @n: integer.
+ *Return: character.
+ */
+
+
 char *_strncat(char *dest, char *src, int n)
 {
-	int i;
+	unsigned int i = 0;
+	int j = 0;
 
-	i = 0;
-	while (*(dest +i) != '\0')
+	while (*(dest + i) != '\0')
 	{
 
 		i++;
 	}
 
-	while (*(src +i) != '\0' && i < n)
+	while (*(src + j) != '\0')
 	{
-		i++;
-
+		if (j < n)
+		{
+			*(dest + i) = *(src + j);
+			i++;
+		}
+		j++;
 	}
 
-	return (dest, src);
-}
-
-int main(void)
-{
-    char s1[98] = "Hello ";
-    char s2[] = "World!\n";
-    char *ptr;
-
-    printf("%s\n", s1);
-    printf("%s", s2);
-    ptr = _strncat(s1, s2, 1);
-    printf("%s\n", s1);
-    printf("%s", s2);
-    printf("%s\n", ptr);
-    ptr = _strncat(s1, s2, 1024);
-    printf("%s", s1);
-    printf("%s", s2);
-    printf("%s", ptr);
-    return (0);
+	return (dest);
 }

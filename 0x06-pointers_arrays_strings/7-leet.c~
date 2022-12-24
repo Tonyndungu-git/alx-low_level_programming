@@ -1,0 +1,39 @@
+#include "main.h"
+#include <stdio.h>
+
+char *leet(char *s)
+{
+
+
+	int i = 0;
+	int j = 0;
+	char *l = "AaEeOoTtLL";
+	char *r = "4433007711";
+
+	while (*(s + i) != '\0')
+	{
+		while (*(l + j) != '\0')
+		{
+			if (*(s + i) == *(l + j))
+			{
+				*(s + i) = *(r + j);
+
+			}
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (s);
+}
+
+int main(void)
+{
+    char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
+    char *p;
+
+    p = leet(s);
+    printf("%s", p);
+    printf("%s", s);
+    return (0);
+}

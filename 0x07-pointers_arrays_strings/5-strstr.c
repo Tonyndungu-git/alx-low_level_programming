@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  *_strstr - function finds the first occurrence of the substring in a string.
  * @haystack: pointer to string.
@@ -28,5 +28,4 @@ char *_strstr(char *haystack, char *needle)
 		haystack = res + 1;
 	}
 	return (NULL);
-}
 }

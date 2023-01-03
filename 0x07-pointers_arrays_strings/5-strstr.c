@@ -7,9 +7,6 @@
  * Return: char pointer.
  */
 
-
-char *_strstr(char *haystack, char *needle)
-{
 char *_strstr(char *haystack, char *needle)
 {
 	char *res;

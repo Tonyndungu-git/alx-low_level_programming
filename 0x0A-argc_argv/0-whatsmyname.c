@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - prints the name of the program.
- * @argc: count of number of inputs.
- * @argv: an array of the inputs.
+ * main - prints the name of the arguments.
+ * @argc: count of number of arguments.
+ * @argv: an array of the arguments.
  * Return: integer.
  */
 

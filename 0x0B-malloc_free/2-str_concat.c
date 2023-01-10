@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
  * _strlen -  function that finds the length of a string.
  * @str: input pointer to str.
@@ -51,21 +51,35 @@ char *_memcpy(char *dest, char *src, int n)
 
 char *str_concat(char *s1, char *s2)
 {
-
 	char *nul = "";
-	int l1 = _strlen(s1);
-	int l2 = _strlen(s2);
-
-
-        if (s1 == NULL)
+	int l_1;
+	int l_2;
+	if (s1 == NULL)
 		s1 = nul;
 	if (s2 == NULL)
 		s2 = nul;
 
-	char *r = malloc((l1 + l2 + 1) * sizeof(char *));
+	l_1 = _strlen(s1);
+	l_2 = _strlen(s2);
 
-	_memcpy(r, s1, l1);
-	_memcpy(r + l1, s2, l2 + 1);
+	char *r = malloc((l_1 + l_2 + 1) * sizeof(char*));
+
+	_memcpy(r, s1, l_1);
+	_memcpy(r + l_1, s2, l_2 + 1);
 
 	return (r);
+}
+
+int main(void)
+{
+    char *s;
+    s = str_concat("Betty ", "Holberton");
+    if (s == NULL)
+    {
+        printf("failed\n");
+        return (1);
+    }
+    printf("%s\n", s);
+    free(s);
+    return (0);
 }

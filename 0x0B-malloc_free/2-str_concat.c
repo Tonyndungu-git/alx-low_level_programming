@@ -30,11 +30,15 @@ char *_memcpy(char *dest, char *src, int n)
 {
 
 
-	char *csrc = *src;
-	char *cdest = *dest;
+	char *csrc = src;
+	char *cdest = dest;
+	int i = 0;
 
-	for (int i = 0; i < n; i++)
+	while (i < n)
+	{
 		cdest[i] = csrc[i];
+		i++;
+	}
 	return (dest);
 }
 

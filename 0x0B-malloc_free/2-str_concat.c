@@ -51,9 +51,16 @@ char *_memcpy(char *dest, char *src, int n)
 
 char *str_concat(char *s1, char *s2)
 {
+
+	char *nul = "";
 	int l1 = _strlen(s1);
 	int l2 = _strlen(s2);
 
+
+        if (s1 == NULL)
+		s1 = nul;
+	if (s2 == NULL)
+		s2 = nul;
 
 	char *r = malloc((l1 + l2 + 1) * sizeof(char *));
 

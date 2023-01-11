@@ -2,66 +2,42 @@
 #include <stdlib.h>
 
 /**
- * _strlen -  function that finds the length of a string.
- * @str: input pointer to str.
- * Return: integer.
- */
-
-
-int _strlen(const char *str)
-{
-	int  len = 0;
-
-	while (str[len] != '\0')
-		++len;
-	return (len);
-}
-
-/**
- * _memcpy -  function copies a string pointer to another.
- * @src: the souce pointer string.
- * @dest: the destination pointer string.
- * @n: lenth of the new string.
- * Return: pointer to a char.
- */
-
-
-char *_memcpy(char *dest, char *src, int n)
-{
-
-
-	char *csrc = src;
-	char *cdest = dest;
-	int i = 0;
-
-	while (i < n)
-	{
-		cdest[i] = csrc[i];
-		i++;
-	}
-	return (dest);
-}
-
-/**
- * str_concat -  function that joins two strings to a new pointer.
- * @s1: pointer to string 1.
- * @s2: ponter to string 2.
- * Return: pointer to char.
+ * str_concat - function that concatenates two strings.
+ * @s1: input char 1
+ * @s2: input char 2
+ * Return: char
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	int l_1;
-	int l_2;
-	char *r;
+	char *cat;
+	char *nul = "";
+	unsigned int i, j, x, y;
 
-	l_1 = _strlen(s1);
-	l_2 = _strlen(s2);
-
-	r = malloc((l_1 + l_2 + 1) * sizeof(char *));
-
-	_memcpy(r, s1, l_1);
-	_memcpy(r + l_1, s2, l_2 + 1);
-
-	return (r);
+	i = j = x = y = 0;
+	if (s1 == NULL)
+		s1 = nul;
+	if (s2 == NULL)
+		s2 = nul;
+	while (s1[i] != '\0')
+		i += 1;
+	while (s2[j] != '\0')
+		j += 1;
+	j += 1;
+	cat = malloc((i + j) * sizeof(*cat));
+	if (cat == NULL)
+		return (NULL);
+	while (s1[x] != '\0')
+	{
+		cat[x] = s1[x];
+		x += 1;
+	}
+	while (s2[y] != '\0')
+	{
+		cat[x] = s2[y];
+		y += 1;
+		x += 1;
+	}
+	cat[x] = '\0';
+	return (cat);
 }

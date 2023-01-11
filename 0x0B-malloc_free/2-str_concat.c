@@ -51,7 +51,6 @@ char *_memcpy(char *dest, char *src, int n)
 
 char *str_concat(char *s1, char *s2)
 {
-	char *nul = "";
 	int l_1;
 	int l_2;
 	char *r;

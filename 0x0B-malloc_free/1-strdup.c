@@ -2,47 +2,30 @@
 #include <stdlib.h>
 
 /**
- * _strlen -  function that finds the length of a string.
- * @str: input pointer to str.
- * Return: integer.
- */
-
-int _strlen(const char *str)
-{
-	int  len = 0;
-
-	while (str[len] != '\0')
-		++len;
-	return (len);
-}
-
-/**
- * _strdup - function that duplicates a pointer to another.
- * @str: pointer to be duplicated.
- * Return: new pointer.
+ * _strdup - returns a pointer to a newly allocated space in memory
+ * which contains a copy of the string given as a parameter.
+ * @str: input char
+ * Return: char
  */
 
 char *_strdup(char *str)
 {
-	char *n;
-	int l;
-	int i = 0;
-
-	l = _strlen(str);
+	char *dup;
+	unsigned int i = 0;
+	unsigned int j = 0;
 
 	if (str == NULL)
 		return (NULL);
-	n = malloc(l * sizeof(*n));
-
-	if (n == NULL)
+	while (str[i] != '\0')
+		i += 1;
+	i += 1;
+	dup = malloc(i * sizeof(*dup));
+	if (dup == NULL)
 		return (NULL);
-
-	while (i < l)
+	while (j < i)
 	{
-
-		n[i] = str[i];
-		i++;
+		dup[j] = str[j];
+		j += 1;
 	}
-
-	return (n);
+	return (dup);
 }

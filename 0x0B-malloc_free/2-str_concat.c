@@ -54,10 +54,6 @@ char *str_concat(char *s1, char *s2)
 	char *nul = "";
 	int l_1;
 	int l_2;
-	if (s1 == NULL)
-		s1 = nul;
-	if (s2 == NULL)
-		s2 = nul;
 
 	l_1 = _strlen(s1);
 	l_2 = _strlen(s2);

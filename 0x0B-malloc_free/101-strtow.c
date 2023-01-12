@@ -8,10 +8,9 @@
  * Return: pointer to a pointer.
  */
 
-
 char **strtow(char *str)
 {
-	int i, j, n, count = 0;
+	int i, j, k, count = 0;
 	char **result;
 
 	for (i = 0; str[i] != '\0'; i++)
@@ -20,18 +19,14 @@ char **strtow(char *str)
 			count++;
 	}
 	result = (char **) malloc((count + 1) * sizeof(char *));
-
 	for (i = 0, j = 0; str[j] != '\0'; j++)
 	{
 		if (str[j] != ' ')
 		{
 			if (i == 0 || str[j - 1] == ' ')
 			{
-				n = (strlen(str) + 1);
-				result[i] = (char *) malloc(sizeof(char) * n);
-
-				int k = 0;
-
+				result[i] = malloc(sizeof(char) * (strlen(str) + 1));
+				k = 0;
 				while (str[j] != ' ' && str[j] != '\0')
 					result[i][k++] = str[j++];
 				result[i][k] = '\0';

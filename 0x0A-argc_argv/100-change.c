@@ -48,7 +48,7 @@ int cents(char *argv[])
 	while (cents >= 10)
 	{
 		cents -= 10;
-		cents++;
+		coins++;
 	}
 	while (cents >= 5)
 	{

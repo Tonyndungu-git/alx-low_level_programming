@@ -19,12 +19,13 @@ int *array_range(int min, int max)
 		return (NULL);
 	if (arr == NULL)
 		return (NULL);
-	i = min;
+	i = 0;
 
 	while (i <= max)
 	{
-		arr[i - min] = i;
+		arr[i] = min;
 		i++;
+		min++;
 
 	}
 	return (arr);

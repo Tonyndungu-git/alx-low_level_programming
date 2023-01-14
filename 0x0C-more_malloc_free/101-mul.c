@@ -9,7 +9,7 @@
  * Return: an int.
  */
 
-long long int mult(long long int num1, long long int num2)
+long int mult(long int num1, long int num2)
 {
 	return (num1 * num2);
 }
@@ -23,8 +23,8 @@ long long int mult(long long int num1, long long int num2)
 
 int main(int argc, char *argv[])
 {
-	long long int i, j, valid = 1;
-	long long int num1, num2, m;
+	long int i, j, valid = 1;
+	long int num1, num2, m;
 
 	if (argc != 3)
 	{
@@ -57,6 +57,6 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[2]);
 
 	m = mult(num1, num2);
-	printf("%lld\n", m);
+	printf("%ld\n", m);
 	return (0);
 }

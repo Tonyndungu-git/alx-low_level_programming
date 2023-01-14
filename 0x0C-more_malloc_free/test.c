@@ -7,7 +7,7 @@ long long int *mult(long long int num1, long long int num2)
 {
 
 	long long int *mult;
-	
+
 	mult =(long long *)malloc(sizeof(long long int));
 
 	if (mult == NULL)

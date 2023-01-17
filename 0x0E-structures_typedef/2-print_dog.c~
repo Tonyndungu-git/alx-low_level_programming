@@ -1,0 +1,23 @@
+#include "dog.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+void print_dog(struct dog *d)
+{
+
+
+	d->name = malloc(sizeof(strlen(struct dog)) + 1);
+	strcpy(d->name, dog.name);
+	printf("%s \n", d->name);
+
+	d->age = dog.age;
+	printf("%f \n", d->age);
+
+	d->owner = malloc(sizeof(strlen(struct owner)) + 1);
+	strcpy(d->owner, dog.owner);
+	printf("%s \n", d->owner);
+
+
+
+}

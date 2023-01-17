@@ -9,15 +9,12 @@
  * @age: age of the dog.
  * @owner: name 0f the owner.
  * Return: void.
-
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d->name = malloc(strlen(name) + 1);
 	strcpy(d->name, name);
 	d->age = age;
-	d->owner = malloc(strlen(owner) + 1);
-	strcpy(d->owner, owner);
+	strcpy(d->breed, breed);
 
 
 }

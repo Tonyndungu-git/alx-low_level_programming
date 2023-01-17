@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 	if (!valid)
 	{
 	    printf("Error\n");
-	    exit(98);
+	    return (98);
 	}
 
 	num1 = atoi(argv[1]);

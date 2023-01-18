@@ -1,0 +1,14 @@
+#include "dog.h"
+#include <stdlib.h>
+
+
+void free_dog(dog_t *d)
+{
+
+	new_dog(d->name, d->age, d->owner);
+
+	if (new_dog == NULL)
+		return (NULL);
+	free(new_dog);
+
+}

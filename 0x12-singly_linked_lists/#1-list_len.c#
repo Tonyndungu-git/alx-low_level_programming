@@ -2,11 +2,6 @@
 #include <stddef.h>
 
 
-/**
- * list_len - prints length of the list i.e its nodes or elements.
- * @h: pointer to the head of the list.
- * Return: number of nodes iin the list.
- */
 
 
 

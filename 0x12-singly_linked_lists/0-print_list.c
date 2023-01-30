@@ -19,7 +19,7 @@ size_t print_list(const list_t *h)
 		{
 			printf("[0] (nill)\n");
 			h = h->next;
-		       	count++;
+			count++;
 		}
 		else
 		{
@@ -30,3 +30,4 @@ size_t print_list(const list_t *h)
 	}
 	return (count);
 }
+

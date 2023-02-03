@@ -1,0 +1,51 @@
+#include "lists.h"
+#include <string.h>
+#include <stdlib.h>
+/**
+ * add_nodeint - function that adds a node to a linked list.
+ * @head: pointer to pointer of the head.
+ * @s: pointer to a string.
+ * Return: pointer of the new element.
+ */
+
+
+
+listint_t *add_nodeint(listint_t **head, const int n)
+{
+	listint_t *s;
+
+	s = malloc(sizeof(listint_t));
+
+	if (s == NULL)
+		return NULL;
+	s->n = n;
+	if (s->n == 0)
+	{
+		
+		return (0);
+	}
+
+	s->next = *head;
+
+	*head = s;
+
+	return (s);
+
+
+}
+int main(void)
+{
+    listint_t *head;
+
+    head = NULL;
+    add_nodeint(&head, 0);
+    add_nodeint(&head, 1);
+    add_nodeint(&head, 2);
+    add_nodeint(&head, 3);
+    add_nodeint(&head, 4);
+    add_nodeint(&head, 98);
+    add_nodeint(&head, 402);
+    add_nodeint(&head, 1024);
+    print_listint(head);
+    return (0);
+}

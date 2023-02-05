@@ -1,0 +1,28 @@
+#include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+/**
+ * get_node_at_index - gets details about a linked list node at an index.
+ * @head: a pointer to the head.
+ * @index: the index to be located.
+ * Return: a list.
+ */
+
+
+
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+	unsigned int i = 0;
+
+	listint_t *tmp = head;
+
+
+	while (tmp && i < index)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i == index ? tmp : NULL);
+
+}

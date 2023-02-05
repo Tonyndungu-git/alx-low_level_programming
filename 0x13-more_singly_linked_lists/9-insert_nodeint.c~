@@ -1,0 +1,80 @@
+#include "lists.h"
+#include <stdlib.h>
+
+/**
+ * insert_nodeint_at_index - function that inserts a new node at given position
+ * @head: head of the node
+ * @idx: index where to place node
+ * @n: data for the node
+ * Return: the address of new node
+ */
+
+
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
+{
+listint_t *new_node;
+	listint_t *temp;
+	unsigned int i;
+
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->n = n;
+	new_node->next = NULL;
+	temp = *head;
+	i = 0;
+	if (*head == NULL && idx > 0)
+	{
+		free(new_node);
+		return (NULL);
+	}
+	if (idx == 0)
+	{
+		new_node->next = *head;
+		*head = new_node;
+		return (new_node);
+	}
+	while (i < idx - 1)
+	{
+		temp = temp->next;
+		if (temp == NULL && idx - i > 0)
+		{
+			free(new_node);
+			return (NULL);
+		}
+		i++;
+	}
+	new_node->next = temp->next;
+	temp->next = new_node;
+	return (new_node);
+}
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    listint_t *head;
+
+    head = NULL;
+    add_nodeint_end(&head, 0);
+    add_nodeint_end(&head, 1);
+    add_nodeint_end(&head, 2);
+    add_nodeint_end(&head, 3);
+    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 98);
+    add_nodeint_end(&head, 402);
+    add_nodeint_end(&head, 1024);
+    print_listint(head);
+    printf("-----------------\n");
+    insert_nodeint_at_index(&head, 5, 4096);
+    print_listint(head);
+    free_listint2(&head);
+    return (0);
+}

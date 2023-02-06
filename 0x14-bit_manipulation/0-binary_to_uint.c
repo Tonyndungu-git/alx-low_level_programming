@@ -24,6 +24,7 @@ int mypow(int x, int y)
  * @b: pointing to a string of 0 and 1 chars
  * Return: the converted number.
  */
+
 unsigned int binary_to_uint(const char *b)
 {
 	int d = 0;

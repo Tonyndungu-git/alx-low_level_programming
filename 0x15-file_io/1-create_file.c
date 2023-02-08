@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _strlen - function that returns the length of a string.

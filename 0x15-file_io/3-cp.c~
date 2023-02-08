@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdlib.h>
+
+#define BUFSIZE 1024
+
+void error_exit(int code, const char *message, const char *file)
+{
+	dprintf(STDERR_FILENO, "%s %s\n", message, file);
+	exit(code);
+}
+
+
+
+int main (int argc,char *argv[])
+{
+	int file_from, file_to, n, fd;
+	char buf[BUFSIZE];
+
+	if (argc != 3)
+	{
+		error_exit(97,"Usage: cp file_from file_to","");
+		return (97);
+	}
+	file_from = open(argv[1], O_RDONLY);
+	if (from_fd == -1)
+	{
+		error_exit(98, "Error: Can't read from file",argv[1]);
+	}
+	file_to = open(argv[2],  O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	if (file_to == -1)
+	{
+		error_exit(99, "Error: Can't write from file",argv[2]);
+	}
+	while ((n = read(file_from, buf, BUFSIZE)) > 0)
+	{
+
+		if (write(file_to, buf, n) != n)
+		{
+
+			error_exit(99, "Error: Can't write to file",argv[2]);
+
+		}
+
+	}
+	if (n == -1)
+	{
+		error_exit(98, "Error: Can't read from file",argv[1]);
+	}
+	fd = close(file_from);
+	if (fd == -1)
+	{
+		error_exit(100, "Error: Can't fd", file_from);
+	}
+	fd = close(file_to);
+	if (fd == -1)
+	{
+		error_exit(100, "Error: Can't write fd",file_to);
+	}
+	return (0);
+}

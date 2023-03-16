@@ -1,23 +1,21 @@
-#include <stdio.h>
-#include <stddef.h>
-#include "lists.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+#include "lists.h"
 
 /**
- * print_dlistint-prints no of items in a list.
+ * dlistint_len - length of a list.
  * @h: pointer to a list.
  * Return: size_t.
  */
 
-size_t print_dlistint(const dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
 
 	int count = 0;
 
 	while (h != NULL)
 	{
-		printf("%d\n", h->n);
 		count++;
 		h = h->next;
 

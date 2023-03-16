@@ -1,13 +1,11 @@
-#include "lists.h"
-#include <stddef.h>
 #include <stdlib.h>
+#include "lists.h"
 
 /**
- * free_dlistint - frees space from the list.
- * @head: pointer to the head of the list
- * Return: void.
+ * free_dlistint - function that frees a list_t list
+ * @head: input header pointer
+ * Return: nothing
  */
-
 void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *tmp;
@@ -16,8 +14,6 @@ void free_dlistint(dlistint_t *head)
 	{
 		tmp = head;
 		head = head->next;
-		head = head->prev;
 		free(tmp);
 	}
-
 }

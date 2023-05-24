@@ -1,4 +1,5 @@
 CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = main.c school.c
 OBJ := $(SRC:.c=.o)
 TARGET = school
@@ -12,7 +13,7 @@ $(TARGET): $(OBJ)
 	$(CC) $(OBJ) -o $(TARGET)
 
 %.o: %.c
-	$(CC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(TARGET) *~ .*~

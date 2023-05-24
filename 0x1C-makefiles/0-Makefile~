@@ -1,0 +1,11 @@
+TARGET = school
+
+.PHONY: all clean
+
+all: $(TARGET)
+
+$(TARGET): main.c
+	gcc main.c -o $(TARGET)
+
+clean:
+	rm -f $(TARGET)

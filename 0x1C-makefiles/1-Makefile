@@ -3,9 +3,7 @@ SRC = main.c school.c
 
 TARGET = school
 
-all: $(TARGET)
-
-$(TARGET): $(SRC)
+all:
 	$(cc) $(SRC) -o $(TARGET)
 
 clean:

@@ -1,0 +1,26 @@
+CC := gcc
+CFLAGS := -Wall -Werror -Wextra -pedantic
+SRC := $(wildcard *.c)
+OBJ := $(patsubst %.c, %.o, $(SRC))
+TARGET := school
+
+.PHONY: all clean oclean fclean re
+
+all: $(TARGET)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $@
+
+$(OBJ): %.o: %.c m.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(CC) -E m.h > /dev/null || echo "Missing header file: m.h"
+	$(CC) -E m.h | grep -q "m\.h" || $(RM) $(TARGET) *~ .*~
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all

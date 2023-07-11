@@ -1,32 +1,46 @@
 #include "search_algos.h"
 #include <math.h>
 
-int jump_search(int *array, size_t size, int value) {
-	int jump = sqrt(size);
-	int prev = 0;
-	int curr = fmin(prev + jump, size - 1);
-	int i;
-
-	if (array == NULL)
+int binary_search(int *array, size_t size, int value)
+{
+    if (array == NULL)
+    {
         return -1;
+    }
 
+    int left = 0;
+    int right = size - 1;
 
-	while (array[prev] < value) {
-		printf("Comparing %d\n", array[curr]);
-		if (array[curr] >= value) {
-			break;
-		}
-		prev = curr;
-	}
-	i = prev;
-	while(i < fmin(prev + jump, size)){
-		printf("Comparing %d\n", array[i]);
-		if (array[i] == value) {
-			return i;
-		}
-		i++;
-	}
-	return -1;
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+
+        printf("Searching in array: ");
+        for (int i = left; i <= right; i++)
+        {
+            printf("%d", array[i]);
+            if (i != right)
+            {
+                printf(", ");
+            }
+        }
+        printf("\n");
+
+        if (array[mid] == value)
+        {
+            return mid;
+        }
+        else if (array[mid] < value)
+        {
+            left = mid + 1;
+        }
+        else
+        {
+            right = mid - 1;
+        }
+    }
+
+    return -1;
 }
 
 int main(void)

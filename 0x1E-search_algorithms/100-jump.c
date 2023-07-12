@@ -1,6 +1,15 @@
 #include "search_algos.h"
 #include <math.h>
 
+/**
+ * jump_search - interpolation search algorithm
+ * @array: array being searched.
+ * @size: size of the array.
+ * @value: value being searched.
+ * Return: an int
+ */
+
+
 int jump_search(int *array, size_t size, int value)
 {
 	int left = 0;
@@ -9,7 +18,7 @@ int jump_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 	{
-		return -1;
+		return (-1);
 	}
 
 	while (left <= right)
@@ -17,10 +26,9 @@ int jump_search(int *array, size_t size, int value)
 		mid = left + (right - left) / 2;
 
 		printf("Value checked array[%d] = [%d]\n", mid, array[mid]);
-		
 		if (array[mid] == value)
 		{
-			return mid;
+			return (mid);
 		}
 		else if (array[mid] < value)
 		{
@@ -31,19 +39,5 @@ int jump_search(int *array, size_t size, int value)
 			right = mid - 1;
 		}
 	}
-     	return -1;
-}
-
-
-int main(void)
-{
-    int array[] = {
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-    };
-    size_t size = sizeof(array) / sizeof(array[0]);
-
-    printf("Found %d at index: %d\n\n", 6, jump_search(array, size, 6));
-    printf("Found %d at index: %d\n\n", 1, jump_search(array, size, 1));
-    printf("Found %d at index: %d\n", 999, jump_search(array, size, 999));
-    return (EXIT_SUCCESS);
+     	return (-1);
 }
